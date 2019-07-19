@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 import requests
 
 def routine_00():
@@ -11,9 +12,9 @@ def routine_00():
             with open("google.txt", "wb") as f:
                 f.write(req._content)
         else:
-            print("  failed with status code {}".format(req.status_code))
+            print("  direct connection failed with status code {}".format(req.status_code))
     except requests.exceptions.ConnectionError as err:
-        print("  connection failed with description {}".format(err))
+        print("  direct connection failed with description {}".format(err))
 
     proxies = {
         "http" : "socks5://127.0.0.1:1080",
@@ -26,9 +27,9 @@ def routine_00():
             with open("google_proxy.txt", "wb") as f:
                 f.write(req._content)
         else:
-            print("  failed with status code {}".format(req.status_code))
+            print("  proxy connection failed with status code {}".format(req.status_code))
     except requests.exceptions.ConnectionError as err:
-        print("  connection failed with description {}".format(err))
+        print("  proxy connection failed with description {}".format(err))
 
     # example code
     #resp = requests.get('http://go.to', proxies=dict(http='socks5://user:pass@host:port',https='socks5://user:pass@host:port'))
