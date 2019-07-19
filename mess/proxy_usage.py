@@ -17,8 +17,8 @@ def routine_00():
         print("  direct connection failed with description {}".format(err))
 
     proxies = {
-        "http" : "socks5://127.0.0.1:1080",
-        "https" : "socks5://127.0.0.1:1080"
+        "http" : "socks5h://127.0.0.1:1080",
+        "https" : "socks5h://127.0.0.1:1080"
     }
     try:
         print("connect to {} through proxy {}".format(url, proxies))
