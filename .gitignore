@@ -4,6 +4,7 @@
 .git/
 
 !README.md
+!requirements.txt
 
 !*.py
 
